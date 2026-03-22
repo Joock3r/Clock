@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>\u05e7\u05e8\u05d0 \u05d0\u05ea \u05d4\u05e9\u05e2\u05d5\u05df</title>
+  <title>קרא את השעון</title>
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    /* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
-       CSS VARIABLES \u2014 DARK (default)
-       \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
+    /* ══════════════════════════════
+       CSS VARIABLES — DARK (default)
+       ══════════════════════════════ */
     :root, [data-theme="dark"] {
       --bg-body:        #060b18;
       --bg-dot:         #00d4ff07;
@@ -74,9 +74,9 @@
       --theme-btn-hover-bg: #162340;
     }
 
-    /* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
-       CSS VARIABLES \u2014 LIGHT
-       \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
+    /* ══════════════════════════════
+       CSS VARIABLES — LIGHT
+       ══════════════════════════════ */
     [data-theme="light"] {
       --bg-body:        #f0f4fb;
       --bg-dot:         #0077aa0d;
@@ -140,7 +140,7 @@
       --theme-btn-hover-bg: #eef4ff;
     }
 
-    /* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 BASE \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
+    /* ══════════════════ BASE ══════════════════ */
     body {
       min-height: 100vh;
       background: var(--bg-body);
@@ -175,7 +175,7 @@
       animation: glowPulse 4s ease infinite;
     }
 
-    /* \u2500\u2500 Theme toggle \u2500\u2500 */
+    /* ── Theme toggle ── */
     #themeToggle {
       position: fixed;
       top: 16px; left: 16px;
@@ -200,7 +200,7 @@
     #themeToggle .toggle-icon { font-size: 16px; transition: transform 0.4s ease; }
     #themeToggle:hover .toggle-icon { transform: rotate(20deg); }
 
-    /* \u2500\u2500 Title \u2500\u2500 */
+    /* ── Title ── */
     .title-wrap { text-align: center; margin-bottom: 24px; }
     .title-label {
       font-size: 11px; font-weight: 700;
@@ -214,7 +214,7 @@
       transition: color 0.35s;
     }
 
-    /* \u2500\u2500 Card \u2500\u2500 */
+    /* ── Card ── */
     .card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
@@ -229,7 +229,7 @@
     }
     .card.visible { opacity: 1; transform: translateY(0); }
 
-    /* \u2500\u2500 Clock wrapper \u2500\u2500 */
+    /* ── Clock wrapper ── */
     .clock-wrap {
       position: relative;
       display: flex; align-items: center; justify-content: center;
@@ -243,7 +243,7 @@
       transition: background 0.35s;
     }
 
-    /* \u2500\u2500 Input \u2500\u2500 */
+    /* ── Input ── */
     .input-hint {
       font-size: 13px; color: var(--hint-color);
       text-align: center; margin-bottom: 12px;
@@ -279,7 +279,7 @@
       animation: shake 0.42s ease;
     }
 
-    /* \u2500\u2500 Submit btn \u2500\u2500 */
+    /* ── Submit btn ── */
     .btn-submit {
       width: 100%;
       background: var(--btn-bg);
@@ -295,7 +295,7 @@
     .btn-submit:hover { box-shadow: var(--btn-shadow-h); transform: translateY(-1px); }
     .btn-submit:active { transform: scale(0.97) translateY(1px); }
 
-    /* \u2500\u2500 Loading \u2500\u2500 */
+    /* ── Loading ── */
     .loading-wrap { text-align: center; padding: 48px 0; color: var(--loading-color); }
     .spinner {
       width: 36px; height: 36px;
@@ -307,7 +307,7 @@
     }
     .loading-text { font-size: 15px; }
 
-    /* \u2500\u2500 Waiting \u2500\u2500 */
+    /* ── Waiting ── */
     .waiting-wrap { text-align: center; }
     .waiting-emoji { font-size: 52px; margin-bottom: 16px; }
     .waiting-title { font-size: 20px; font-weight: 800; color: var(--waiting-title); margin-bottom: 8px; transition: color 0.35s; }
@@ -320,7 +320,7 @@
       transition: color 0.35s;
     }
 
-    /* \u2500\u2500 Result \u2500\u2500 */
+    /* ── Result ── */
     .result-wrap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
     .result-emoji {
       font-size: 68px; line-height: 1;
@@ -350,7 +350,7 @@
     }
     .result-footer { font-size: 12px; color: var(--result-footer); margin-top: 4px; transition: color 0.35s; }
 
-    /* \u2500\u2500 Stats bar \u2500\u2500 */
+    /* ── Stats bar ── */
     .stats-bar { display: flex; gap: 8px; width: 100%; max-width: 400px; margin-top: 14px; }
     .stat-card {
       background: var(--stat-card-bg);
@@ -368,7 +368,7 @@
     .page-footer { margin-top: 16px; font-size: 11px; color: var(--page-footer); text-align: center; transition: color 0.35s; }
     .playing-wrap { display: flex; flex-direction: column; align-items: center; gap: 22px; }
 
-    /* \u2500\u2500 Animations \u2500\u2500 */
+    /* ── Animations ── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(16px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -397,15 +397,15 @@
   <div class="ambient-top"></div>
 
   <!-- Theme toggle -->
-  <button id="themeToggle" onclick="toggleTheme()" aria-label="\u05d4\u05d7\u05dc\u05e3 \u05de\u05e6\u05d1 \u05ea\u05e6\u05d5\u05d2\u05d4">
-    <span class="toggle-icon" id="themeIcon">\u2600\ufe0f</span>
-    <span id="themeLabel">\u05de\u05e6\u05d1 \u05d1\u05d4\u05d9\u05e8</span>
+  <button id="themeToggle" onclick="toggleTheme()" aria-label="החלף מצב תצוגה">
+    <span class="toggle-icon" id="themeIcon">☀️</span>
+    <span id="themeLabel">מצב בהיר</span>
   </button>
 
   <!-- Title -->
   <div class="title-wrap">
-    <div class="title-label">\u23f1 \u05d0\u05ea\u05d2\u05e8 \u05d9\u05d5\u05de\u05d9</div>
-    <h1 class="title-main">\u05e7\u05e8\u05d0 \u05d0\u05ea \u05d4\u05e9\u05e2\u05d5\u05df</h1>
+    <div class="title-label">⏱ אתגר יומי</div>
+    <h1 class="title-main">קרא את השעון</h1>
   </div>
 
   <!-- Card -->
@@ -414,15 +414,15 @@
     <div id="state-loading">
       <div class="loading-wrap">
         <div class="spinner"></div>
-        <div class="loading-text">\u05d8\u05d5\u05e2\u05df...</div>
+        <div class="loading-text">טוען...</div>
       </div>
     </div>
 
     <div id="state-waiting" style="display:none;">
       <div class="waiting-wrap">
-        <div class="waiting-emoji">\ud83c\udf19</div>
-        <div class="waiting-title">\u05db\u05d1\u05e8 \u05e9\u05d9\u05d7\u05e7\u05ea \u05d4\u05d9\u05d5\u05dd!</div>
-        <div class="waiting-sub">\u05d7\u05d6\u05d5\u05e8 \u05d1\u05e2\u05d5\u05d3</div>
+        <div class="waiting-emoji">🌙</div>
+        <div class="waiting-title">כבר שיחקת היום!</div>
+        <div class="waiting-sub">חזור בעוד</div>
         <div class="countdown" id="countdown">00:00:00</div>
       </div>
     </div>
@@ -434,9 +434,9 @@
           <svg id="clockSvg" width="260" height="260"></svg>
         </div>
         <div style="width:100%">
-          <div class="input-hint">\u05d4\u05d6\u05df \u05d0\u05ea \u05d4\u05e9\u05e2\u05d4 \u05d4\u05de\u05d5\u05e6\u05d2\u05ea (\u05dc\u05d3\u05d5\u05d2\u05de\u05d4: <span>12:23</span>)</div>
+          <div class="input-hint">הזן את השעה המוצגת (לדוגמה: <span>12:23</span>)</div>
           <input type="text" id="timeInput" placeholder="__:__" maxlength="5" autocomplete="off" />
-          <button class="btn-submit" onclick="handleSubmit()">\u05d0\u05e9\u05e8 \u05ea\u05e9\u05d5\u05d1\u05d4 \u2713</button>
+          <button class="btn-submit" onclick="handleSubmit()">אשר תשובה ✓</button>
         </div>
       </div>
     </div>
@@ -450,7 +450,7 @@
         </div>
         <div class="streak-badge" id="streakBadge" style="display:none;"></div>
         <div class="best-badge"   id="bestBadge"   style="display:none;"></div>
-        <div class="result-footer">\u05d4\u05de\u05e9\u05d7\u05e7 \u05d4\u05d1\u05d0 \u05d9\u05d4\u05d9\u05d4 \u05d6\u05de\u05d9\u05df \u05d1\u05e2\u05d5\u05d3 24 \u05e9\u05e2\u05d5\u05ea</div>
+        <div class="result-footer">המשחק הבא יהיה זמין בעוד 24 שעות</div>
       </div>
     </div>
 
@@ -460,27 +460,27 @@
   <div class="stats-bar" id="statsBar" style="visibility:hidden;">
     <div class="stat-card" style="border:1px solid #ff8c0033;">
       <div class="stat-value" style="color:#ff8c00;" id="stat-streak">0</div>
-      <div class="stat-label">\ud83d\udd25 \u05e8\u05e6\u05e3 \u05e0\u05d5\u05db\u05d7\u05d9</div>
+      <div class="stat-label">🔥 רצף נוכחי</div>
     </div>
     <div class="stat-card" style="border:1px solid #ffd70033;">
       <div class="stat-value" style="color:#ffd700;" id="stat-best">0</div>
-      <div class="stat-label">\ud83d\udc51 \u05e9\u05d9\u05d0 \u05e8\u05e6\u05e3</div>
+      <div class="stat-label">👑 שיא רצף</div>
     </div>
     <div class="stat-card" style="border:1px solid #0088cc33;">
       <div class="stat-value" style="color:#0088cc;" id="stat-total">0</div>
-      <div class="stat-label">\u05de\u05e9\u05d7\u05e7\u05d9\u05dd</div>
+      <div class="stat-label">משחקים</div>
     </div>
     <div class="stat-card" style="border:1px solid #00aa6633;">
       <div class="stat-value" style="color:#00aa66;" id="stat-rate">0%</div>
-      <div class="stat-label">% \u05d4\u05e6\u05dc\u05d7\u05d4</div>
+      <div class="stat-label">% הצלחה</div>
     </div>
   </div>
 
-  <div class="page-footer">\u05de\u05e9\u05d7\u05e7 \u05e9\u05d4\u05ea\u05d7\u05d9\u05dc \u05d5\u05dc\u05d0 \u05d4\u05d5\u05e9\u05dc\u05dd \u05e0\u05e1\u05e4\u05e8 \u05db\u05db\u05d9\u05e9\u05dc\u05d5\u05df</div>
+  <div class="page-footer">משחק שהתחיל ולא הושלם נספר ככישלון</div>
 </div>
 
 <script>
-// \u2500\u2500 Theme \u2500\u2500
+// ── Theme ──
 const THEME_KEY  = 'clock_game_theme';
 const STORAGE_KEY = 'clock_game_v1';
 const COOLDOWN_MS = 24 * 60 * 60 * 1000;
@@ -489,8 +489,8 @@ let isDark = localStorage.getItem(THEME_KEY) !== 'light';
 
 function applyTheme() {
   document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
-  document.getElementById('themeIcon').textContent  = isDark ? '\u2600\ufe0f' : '\ud83c\udf19';
-  document.getElementById('themeLabel').textContent = isDark ? '\u05de\u05e6\u05d1 \u05d1\u05d4\u05d9\u05e8' : '\u05de\u05e6\u05d1 \u05db\u05d4\u05d4';
+  document.getElementById('themeIcon').textContent  = isDark ? '☀️' : '🌙';
+  document.getElementById('themeLabel').textContent = isDark ? 'מצב בהיר' : 'מצב כהה';
   // Redraw clock with new palette if in game
   if (currentClock) drawClock(currentClock.hour, currentClock.minute);
 }
@@ -501,22 +501,22 @@ function toggleTheme() {
   applyTheme();
 }
 
-// \u2500\u2500 Helpers \u2500\u2500
+// ── Helpers ──
 function getVar(name) {
   return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 }
 
-// \u2500\u2500 Storage \u2500\u2500
+// ── Storage ──
 function loadStats() {
   try { const r = localStorage.getItem(STORAGE_KEY); if (r) return JSON.parse(r); } catch {}
   return { streak:0, bestStreak:0, totalGames:0, successCount:0, lastGameTimestamp:null, pendingGame:null };
 }
 function saveStats(s) { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(s)); } catch {} }
 
-// \u2500\u2500 State \u2500\u2500
+// ── State ──
 let stats = null, currentClock = null, countdownInterval = null, gameState = 'loading';
 
-// \u2500\u2500 Init \u2500\u2500
+// ── Init ──
 window.addEventListener('DOMContentLoaded', () => {
   applyTheme();
 
@@ -537,7 +537,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// \u2500\u2500 Begin game \u2500\u2500
+// ── Begin game ──
 function beginGame() {
   const hour   = Math.floor(Math.random() * 12) + 1;
   const minute = Math.floor(Math.random() * 60);
@@ -551,9 +551,20 @@ function beginGame() {
   const inp = document.getElementById('timeInput');
   inp.focus();
   inp.onkeydown = e => { if (e.key === 'Enter') handleSubmit(); };
+  inp.oninput = e => {
+    let val = inp.value.replace(/[^0-9:]/g, '');
+    // Auto-insert colon after 2 digits
+    const digits = val.replace(/:/g, '');
+    if (digits.length >= 2 && !val.includes(':')) {
+      val = digits.slice(0, 2) + ':' + digits.slice(2, 4);
+    }
+    // Clamp to 5 chars (HH:MM)
+    if (val.length > 5) val = val.slice(0, 5);
+    inp.value = val;
+  };
 }
 
-// \u2500\u2500 Waiting \u2500\u2500
+// ── Waiting ──
 function startWaiting(remaining) {
   showState('waiting');
   document.getElementById('card').classList.add('visible');
@@ -574,5 +585,165 @@ function updateCountdown(ms) {
 }
 function pad(n) { return String(n).padStart(2,'0'); }
 
-// \u2500\u2500 Draw clock (theme-aware) \u2500\u2500
+// ── Draw clock (theme-aware) ──
 function drawClock(hour, minute) {
+  const size = 260, cx = 130, cy = 130, r = 116;
+  const svg  = document.getElementById('clockSvg');
+  svg.innerHTML = '';
+
+  // Read current theme colours from CSS vars
+  const C = {
+    face:    getVar('--clock-face'),
+    faceG1:  getVar('--clock-face-g1'),
+    faceG2:  getVar('--clock-face-g2'),
+    border:  getVar('--clock-border'),
+    tickMin: getVar('--clock-tick-min'),
+    tickHr:  getVar('--clock-tick-hr'),
+    nums:    getVar('--clock-nums'),
+    handH:   getVar('--clock-hand-h'),
+    handM:   getVar('--clock-hand-m'),
+    center:  getVar('--clock-center'),
+    cap:     getVar('--clock-cap'),
+  };
+
+  const ns = 'http://www.w3.org/2000/svg';
+  function mk(tag, attrs) {
+    const el = document.createElementNS(ns, tag);
+    for (const [k,v] of Object.entries(attrs)) el.setAttribute(k, v);
+    return el;
+  }
+  function pt(a, len) {
+    const rad = (a - 90) * Math.PI / 180;
+    return { x: cx + len * Math.cos(rad), y: cy + len * Math.sin(rad) };
+  }
+
+  // Defs
+  const defs = mk('defs', {});
+  const grad = mk('radialGradient', { id:'cg', cx:'50%', cy:'40%', r:'60%' });
+  grad.appendChild(mk('stop', { offset:'0%',   'stop-color': C.faceG1 }));
+  grad.appendChild(mk('stop', { offset:'100%', 'stop-color': C.faceG2 }));
+  defs.appendChild(grad);
+  svg.appendChild(defs);
+
+  // Outer glow rings
+  svg.appendChild(mk('circle', { cx, cy, r: r+10, fill:'none', stroke: C.border+'18', 'stroke-width':'10' }));
+  svg.appendChild(mk('circle', { cx, cy, r: r+5,  fill:'none', stroke: C.border+'30', 'stroke-width':'3' }));
+
+  // Face
+  svg.appendChild(mk('circle', { cx, cy, r, fill: C.face, stroke: C.border, 'stroke-width':'2.5' }));
+  svg.appendChild(mk('circle', { cx, cy, r: r-2, fill:'url(#cg)' }));
+
+  // Minute ticks
+  for (let i = 0; i < 60; i++) {
+    if (i % 5 === 0) continue;
+    const o = pt(i*6, r-4), inn = pt(i*6, r-11);
+    svg.appendChild(mk('line', { x1:o.x, y1:o.y, x2:inn.x, y2:inn.y, stroke: C.tickMin, 'stroke-width':'1' }));
+  }
+
+  // Hour markers + numbers
+  for (let i = 0; i < 12; i++) {
+    const a = i * 30;
+    const o = pt(a, r-4), inn = pt(a, r-18), np = pt(a, r-36);
+    svg.appendChild(mk('line', { x1:o.x, y1:o.y, x2:inn.x, y2:inn.y, stroke: C.tickHr, 'stroke-width':'2.5', 'stroke-linecap':'round' }));
+    const txt = mk('text', { x:np.x, y:np.y, 'text-anchor':'middle', 'dominant-baseline':'central',
+      fill: C.nums, 'font-size':'13', 'font-family':"'Space Mono', monospace", 'font-weight':'700' });
+    txt.textContent = i === 0 ? '12' : String(i);
+    svg.appendChild(txt);
+  }
+
+  // Hands
+  const hAngle = ((hour % 12) + minute/60) * 30;
+  const mAngle = minute * 6;
+  const hTip = pt(hAngle, r*0.52), mTip = pt(mAngle, r*0.74);
+
+  const hHand = mk('line', { x1:cx, y1:cy, x2:hTip.x, y2:hTip.y, stroke: C.handH, 'stroke-width':'6', 'stroke-linecap':'round' });
+  hHand.style.filter = isDark ? 'drop-shadow(0 0 4px #ffffff88)' : 'drop-shadow(0 2px 4px #00000033)';
+  svg.appendChild(hHand);
+
+  const mHand = mk('line', { x1:cx, y1:cy, x2:mTip.x, y2:mTip.y, stroke: C.handM, 'stroke-width':'4', 'stroke-linecap':'round' });
+  mHand.style.filter = isDark ? 'drop-shadow(0 0 6px #00d4ffaa)' : 'drop-shadow(0 2px 6px #0088cc66)';
+  svg.appendChild(mHand);
+
+  svg.appendChild(mk('circle', { cx, cy, r:'8', fill: C.center }));
+  svg.appendChild(mk('circle', { cx, cy, r:'4', fill: C.cap }));
+
+  svg.style.filter = getVar('--clock-shadow');
+}
+
+// ── Submit ──
+function handleSubmit() {
+  if (!currentClock) return;
+  const raw = document.getElementById('timeInput').value.trim().replace(/[.\s,]/g, ':');
+  const parts = raw.split(':');
+  let userHour, userMinute;
+  if (parts.length === 2) {
+    userHour = parseInt(parts[0],10); userMinute = parseInt(parts[1],10);
+  } else if (/^\d{3,4}$/.test(raw)) {
+    const d = raw.padStart(4,'0');
+    userHour = parseInt(d.slice(0,2),10); userMinute = parseInt(d.slice(2),10);
+  } else { shakeInput(); return; }
+
+  if (isNaN(userHour)||isNaN(userMinute)||userHour<1||userHour>12||userMinute<0||userMinute>59) {
+    shakeInput(); return;
+  }
+
+  const correct = userHour === currentClock.hour && userMinute === currentClock.minute;
+  const fmt = (h,m) => `${pad(h)}:${pad(m)}`;
+  stats.totalGames++;
+  stats.lastGameTimestamp = Date.now();
+  stats.pendingGame = null;
+  if (correct) {
+    stats.successCount++; stats.streak++;
+    if (stats.streak > stats.bestStreak) stats.bestStreak = stats.streak;
+  } else { stats.streak = 0; }
+  saveStats(stats);
+  updateStatsBar();
+  showResult(correct, fmt(userHour, userMinute), fmt(currentClock.hour, currentClock.minute));
+}
+
+function shakeInput() {
+  const inp = document.getElementById('timeInput');
+  inp.classList.remove('error'); void inp.offsetWidth;
+  inp.classList.add('error');
+  setTimeout(() => inp.classList.remove('error'), 500);
+}
+
+// ── Show result ──
+function showResult(correct, userAnswer, correctAnswer) {
+  document.getElementById('resultEmoji').textContent = correct ? '✅' : '❌';
+  document.getElementById('resultEmoji').className = `result-emoji ${correct?'correct':'wrong'}`;
+  const title = document.getElementById('resultTitle');
+  title.textContent = correct ? 'כל הכבוד! 🎉' : 'לא בדיוק...';
+  title.className = `result-title ${correct?'correct':'wrong'}`;
+  const detail = document.getElementById('resultDetail');
+  detail.innerHTML = correct
+    ? `השעה היתה <span class="mono correct">${correctAnswer}</span>`
+    : `ענית <span class="mono wrong">${userAnswer}</span><br>השעה הנכונה: <span class="mono correct">${correctAnswer}</span>`;
+  const sb = document.getElementById('streakBadge');
+  if (correct && stats.streak > 1) { sb.textContent = `🔥 רצף של ${stats.streak}!`; sb.style.display='block'; }
+  else sb.style.display='none';
+  const bb = document.getElementById('bestBadge');
+  if (correct && stats.streak === stats.bestStreak && stats.streak > 0) { bb.style.display='block'; bb.textContent='👑 שיא אישי חדש!'; }
+  else bb.style.display='none';
+  showState('result');
+}
+
+// ── Stats bar ──
+function updateStatsBar() {
+  document.getElementById('stat-streak').textContent = stats.streak;
+  document.getElementById('stat-best').textContent   = stats.bestStreak;
+  document.getElementById('stat-total').textContent  = stats.totalGames;
+  const rate = stats.totalGames > 0 ? Math.round((stats.successCount/stats.totalGames)*100) : 0;
+  document.getElementById('stat-rate').textContent   = rate + '%';
+  document.getElementById('statsBar').style.visibility = 'visible';
+}
+
+function showState(name) {
+  ['loading','waiting','playing','result'].forEach(s =>
+    document.getElementById('state-'+s).style.display = (s===name)?'block':'none'
+  );
+  gameState = name;
+}
+</script>
+</body>
+</html>
