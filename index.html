@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>\u05e7\u05e8\u05d0 \u05d0\u05ea \u05d4\u05e9\u05e2\u05d5\u05df</title>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
+       CSS VARIABLES \u2014 DARK (default)
+       \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
+    :root, [data-theme="dark"] {
+      --bg-body:        #060b18;
+      --bg-dot:         #00d4ff07;
+      --bg-grad:        radial-gradient(ellipse at 20% 10%, #0d1f3a 0%, #060b18 55%, #08101f 100%);
+      --ambient:        radial-gradient(ellipse, #00d4ff05 0%, transparent 70%);
+
+      --card-bg:        linear-gradient(145deg, #0c1428f0, #090f22f0);
+      --card-border:    #00d4ff1a;
+      --card-shadow:    0 32px 80px #00000088, inset 0 1px 0 #ffffff08;
+
+      --title-label:    #00d4ff66;
+      --title-main:     #ddeeff;
+
+      --hint-color:     #4a6690;
+      --hint-mono:      #00d4ff66;
+
+      --input-bg:       #08101e;
+      --input-border:   #00d4ff22;
+      --input-focus:    #00d4ff55;
+      --input-glow:     #00d4ff11;
+      --input-color:    #e0f0ff;
+
+      --btn-bg:         linear-gradient(135deg, #00c8f0, #0082cc);
+      --btn-color:      #030810;
+      --btn-shadow:     0 6px 28px #00d4ff2a;
+      --btn-shadow-h:   0 8px 36px #00d4ff44;
+
+      --waiting-title:  #c0d8ff;
+      --waiting-sub:    #405878;
+      --countdown:      #00d4ff;
+      --countdown-glow: #00d4ff66;
+
+      --result-detail:  #5a7a99;
+      --result-footer:  #2a4060;
+
+      --stat-card-bg:   linear-gradient(135deg, #0d1530ee, #111b3aee);
+      --stat-label:     #5a7299;
+
+      --page-footer:    #1a2d48;
+      --loading-color:  #2a4060;
+      --spinner-track:  #00d4ff22;
+      --spinner-tip:    #00d4ff;
+
+      --clock-face:     #0a0f1e;
+      --clock-face-g1:  #0d1530;
+      --clock-face-g2:  #060b18;
+      --clock-border:   #00d4ff;
+      --clock-tick-min: #ffffff1a;
+      --clock-tick-hr:  #00d4ff;
+      --clock-nums:     #a8d8ff;
+      --clock-hand-h:   #ffffff;
+      --clock-hand-m:   #00d4ff;
+      --clock-center:   #00d4ff;
+      --clock-cap:      #060b18;
+      --clock-shadow:   drop-shadow(0 0 28px #00d4ff55);
+      --clock-glow-bg:  radial-gradient(circle, #00d4ff06, transparent 65%);
+
+      --theme-btn-bg:       #0d1a30;
+      --theme-btn-border:   #00d4ff22;
+      --theme-btn-color:    #a0c4e8;
+      --theme-btn-hover-bg: #162340;
+    }
+
+    /* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
+       CSS VARIABLES \u2014 LIGHT
+       \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
+    [data-theme="light"] {
+      --bg-body:        #f0f4fb;
+      --bg-dot:         #0077aa0d;
+      --bg-grad:        radial-gradient(ellipse at 20% 10%, #ddeeff 0%, #f0f4fb 55%, #e8f0fa 100%);
+      --ambient:        radial-gradient(ellipse, #0077aa08 0%, transparent 70%);
+
+      --card-bg:        linear-gradient(145deg, #ffffffee, #f4f8ffee);
+      --card-border:    #0088cc22;
+      --card-shadow:    0 16px 60px #0000001a, inset 0 1px 0 #ffffff88;
+
+      --title-label:    #0077aaaa;
+      --title-main:     #112244;
+
+      --hint-color:     #5577aa;
+      --hint-mono:      #0077aaaa;
+
+      --input-bg:       #f8faff;
+      --input-border:   #0088cc33;
+      --input-focus:    #0088cc88;
+      --input-glow:     #0088cc14;
+      --input-color:    #112244;
+
+      --btn-bg:         linear-gradient(135deg, #0099dd, #0066bb);
+      --btn-color:      #ffffff;
+      --btn-shadow:     0 6px 28px #0088cc33;
+      --btn-shadow-h:   0 8px 36px #0088cc55;
+
+      --waiting-title:  #112244;
+      --waiting-sub:    #5577aa;
+      --countdown:      #0077cc;
+      --countdown-glow: #0077cc44;
+
+      --result-detail:  #4466aa;
+      --result-footer:  #8899bb;
+
+      --stat-card-bg:   linear-gradient(135deg, #ffffffee, #eef3ffee);
+      --stat-label:     #7788aa;
+
+      --page-footer:    #aabbcc;
+      --loading-color:  #7799bb;
+      --spinner-track:  #0088cc22;
+      --spinner-tip:    #0088cc;
+
+      --clock-face:     #f8fbff;
+      --clock-face-g1:  #eef4ff;
+      --clock-face-g2:  #f8fbff;
+      --clock-border:   #0088cc;
+      --clock-tick-min: #00000018;
+      --clock-tick-hr:  #0088cc;
+      --clock-nums:     #1155aa;
+      --clock-hand-h:   #112244;
+      --clock-hand-m:   #0088cc;
+      --clock-center:   #0088cc;
+      --clock-cap:      #f8fbff;
+      --clock-shadow:   drop-shadow(0 4px 18px #0088cc33);
+      --clock-glow-bg:  radial-gradient(circle, #0088cc08, transparent 65%);
+
+      --theme-btn-bg:       #ffffff;
+      --theme-btn-border:   #0088cc33;
+      --theme-btn-color:    #446688;
+      --theme-btn-hover-bg: #eef4ff;
+    }
+
+    /* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 BASE \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
+    body {
+      min-height: 100vh;
+      background: var(--bg-body);
+      font-family: 'Heebo', sans-serif;
+      direction: rtl;
+      overflow-x: hidden;
+      transition: background 0.35s ease;
+    }
+
+    #app {
+      min-height: 100vh;
+      background-image:
+        radial-gradient(circle, var(--bg-dot) 1px, transparent 1px),
+        var(--bg-grad);
+      background-size: 30px 30px, 100% 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 28px 16px;
+      position: relative;
+      transition: background-image 0.35s ease;
+    }
+
+    .ambient-top {
+      position: fixed;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 600px; height: 220px;
+      background: var(--ambient);
+      pointer-events: none;
+      animation: glowPulse 4s ease infinite;
+    }
+
+    /* \u2500\u2500 Theme toggle \u2500\u2500 */
+    #themeToggle {
+      position: fixed;
+      top: 16px; left: 16px;
+      display: flex; align-items: center; gap: 7px;
+      background: var(--theme-btn-bg);
+      border: 1px solid var(--theme-btn-border);
+      border-radius: 20px;
+      padding: 7px 14px;
+      font-family: 'Heebo', sans-serif;
+      font-size: 13px; font-weight: 600;
+      color: var(--theme-btn-color);
+      cursor: pointer;
+      box-shadow: 0 2px 12px #00000018;
+      transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.1s;
+      z-index: 100;
+    }
+    #themeToggle:hover {
+      background: var(--theme-btn-hover-bg);
+      transform: translateY(-1px);
+    }
+    #themeToggle:active { transform: scale(0.96); }
+    #themeToggle .toggle-icon { font-size: 16px; transition: transform 0.4s ease; }
+    #themeToggle:hover .toggle-icon { transform: rotate(20deg); }
+
+    /* \u2500\u2500 Title \u2500\u2500 */
+    .title-wrap { text-align: center; margin-bottom: 24px; }
+    .title-label {
+      font-size: 11px; font-weight: 700;
+      color: var(--title-label); letter-spacing: 3px;
+      text-transform: uppercase; margin-bottom: 8px;
+      transition: color 0.35s;
+    }
+    .title-main {
+      font-size: 28px; font-weight: 900;
+      color: var(--title-main); letter-spacing: -0.5px;
+      transition: color 0.35s;
+    }
+
+    /* \u2500\u2500 Card \u2500\u2500 */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 32px 28px;
+      width: 100%; max-width: 400px;
+      box-shadow: var(--card-shadow);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease,
+                  background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+    }
+    .card.visible { opacity: 1; transform: translateY(0); }
+
+    /* \u2500\u2500 Clock wrapper \u2500\u2500 */
+    .clock-wrap {
+      position: relative;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 4px;
+    }
+    .clock-glow {
+      position: absolute;
+      inset: -16px; border-radius: 50%;
+      background: var(--clock-glow-bg);
+      animation: glowPulse 3s ease infinite;
+      transition: background 0.35s;
+    }
+
+    /* \u2500\u2500 Input \u2500\u2500 */
+    .input-hint {
+      font-size: 13px; color: var(--hint-color);
+      text-align: center; margin-bottom: 12px;
+      transition: color 0.35s;
+    }
+    .input-hint span { font-family: 'Space Mono', monospace; color: var(--hint-mono); font-size: 12px; }
+
+    #timeInput {
+      width: 100%;
+      background: var(--input-bg);
+      border: 2px solid var(--input-border);
+      border-radius: 14px;
+      color: var(--input-color);
+      font-size: 32px;
+      font-family: 'Space Mono', monospace;
+      font-weight: 700;
+      text-align: center;
+      padding: 14px;
+      letter-spacing: 6px;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s, background 0.35s, color 0.35s;
+      direction: ltr;
+      display: block;
+      margin-bottom: 18px;
+    }
+    #timeInput:focus {
+      border-color: var(--input-focus);
+      box-shadow: 0 0 0 3px var(--input-glow);
+    }
+    #timeInput.error {
+      border-color: #ff446688 !important;
+      box-shadow: 0 0 0 3px #ff446622 !important;
+      animation: shake 0.42s ease;
+    }
+
+    /* \u2500\u2500 Submit btn \u2500\u2500 */
+    .btn-submit {
+      width: 100%;
+      background: var(--btn-bg);
+      color: var(--btn-color);
+      font-family: 'Heebo', sans-serif;
+      font-size: 16px; font-weight: 800;
+      padding: 15px; border-radius: 14px;
+      letter-spacing: 0.5px;
+      border: none; cursor: pointer;
+      box-shadow: var(--btn-shadow);
+      transition: transform 0.12s, box-shadow 0.12s, background 0.35s;
+    }
+    .btn-submit:hover { box-shadow: var(--btn-shadow-h); transform: translateY(-1px); }
+    .btn-submit:active { transform: scale(0.97) translateY(1px); }
+
+    /* \u2500\u2500 Loading \u2500\u2500 */
+    .loading-wrap { text-align: center; padding: 48px 0; color: var(--loading-color); }
+    .spinner {
+      width: 36px; height: 36px;
+      border: 3px solid var(--spinner-track);
+      border-top: 3px solid var(--spinner-tip);
+      border-radius: 50%;
+      margin: 0 auto 16px;
+      animation: spin 0.8s linear infinite;
+    }
+    .loading-text { font-size: 15px; }
+
+    /* \u2500\u2500 Waiting \u2500\u2500 */
+    .waiting-wrap { text-align: center; }
+    .waiting-emoji { font-size: 52px; margin-bottom: 16px; }
+    .waiting-title { font-size: 20px; font-weight: 800; color: var(--waiting-title); margin-bottom: 8px; transition: color 0.35s; }
+    .waiting-sub { font-size: 14px; color: var(--waiting-sub); margin-bottom: 24px; transition: color 0.35s; }
+    .countdown {
+      font-family: 'Space Mono', monospace;
+      font-size: 38px; font-weight: 700;
+      color: var(--countdown); letter-spacing: 4px;
+      text-shadow: 0 0 20px var(--countdown-glow);
+      transition: color 0.35s;
+    }
+
+    /* \u2500\u2500 Result \u2500\u2500 */
+    .result-wrap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+    .result-emoji {
+      font-size: 68px; line-height: 1;
+      opacity: 0;
+      animation: popIn 0.45s cubic-bezier(.34,1.56,.64,1) 0.05s forwards;
+    }
+    .result-emoji.correct { filter: drop-shadow(0 0 24px #00ff8888); }
+    .result-emoji.wrong   { filter: drop-shadow(0 0 24px #ff446688); }
+    .result-text { text-align: center; opacity: 0; animation: fadeUp 0.4s ease 0.2s forwards; }
+    .result-title { font-size: 22px; font-weight: 800; margin-bottom: 6px; }
+    .result-title.correct { color: #00bb66; }
+    .result-title.wrong   { color: #ee4466; }
+    .result-detail { font-size: 14px; color: var(--result-detail); line-height: 1.9; transition: color 0.35s; }
+    .result-detail .mono { font-family: 'Space Mono', monospace; font-size: 15px; }
+    .result-detail .mono.correct { color: var(--countdown); }
+    .result-detail .mono.wrong   { color: #ff6680; }
+    .streak-badge {
+      background: #ff8c0011; border: 1px solid #ff8c0033;
+      border-radius: 10px; padding: 10px 20px;
+      font-size: 14px; color: #ff9c20; font-weight: 700;
+      opacity: 0; animation: fadeUp 0.4s ease 0.35s forwards;
+    }
+    .best-badge {
+      font-size: 13px; color: #ffd700; font-weight: 700;
+      text-shadow: 0 0 12px #ffd70066;
+      opacity: 0; animation: fadeUp 0.4s ease 0.45s forwards;
+    }
+    .result-footer { font-size: 12px; color: var(--result-footer); margin-top: 4px; transition: color 0.35s; }
+
+    /* \u2500\u2500 Stats bar \u2500\u2500 */
+    .stats-bar { display: flex; gap: 8px; width: 100%; max-width: 400px; margin-top: 14px; }
+    .stat-card {
+      background: var(--stat-card-bg);
+      border-radius: 12px; padding: 14px 10px;
+      text-align: center; flex: 1; min-width: 72px;
+      transition: background 0.35s, border-color 0.35s;
+    }
+    .stat-value {
+      font-family: 'Space Mono', monospace;
+      font-size: 20px; font-weight: 700;
+      line-height: 1; margin-bottom: 6px;
+    }
+    .stat-label { font-size: 10px; color: var(--stat-label); line-height: 1.3; transition: color 0.35s; }
+
+    .page-footer { margin-top: 16px; font-size: 11px; color: var(--page-footer); text-align: center; transition: color 0.35s; }
+    .playing-wrap { display: flex; flex-direction: column; align-items: center; gap: 22px; }
+
+    /* \u2500\u2500 Animations \u2500\u2500 */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes popIn {
+      0%   { transform: scale(0.6); opacity: 0; }
+      65%  { transform: scale(1.08); opacity: 1; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    @keyframes shake {
+      0%,100% { transform: translateX(0); }
+      18%  { transform: translateX(-9px); }
+      36%  { transform: translateX(9px); }
+      54%  { transform: translateX(-5px); }
+      72%  { transform: translateX(5px); }
+    }
+    @keyframes glowPulse {
+      0%,100% { opacity: 0.5; }
+      50%     { opacity: 1; }
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+<div id="app">
+  <div class="ambient-top"></div>
+
+  <!-- Theme toggle -->
+  <button id="themeToggle" onclick="toggleTheme()" aria-label="\u05d4\u05d7\u05dc\u05e3 \u05de\u05e6\u05d1 \u05ea\u05e6\u05d5\u05d2\u05d4">
+    <span class="toggle-icon" id="themeIcon">\u2600\ufe0f</span>
+    <span id="themeLabel">\u05de\u05e6\u05d1 \u05d1\u05d4\u05d9\u05e8</span>
+  </button>
+
+  <!-- Title -->
+  <div class="title-wrap">
+    <div class="title-label">\u23f1 \u05d0\u05ea\u05d2\u05e8 \u05d9\u05d5\u05de\u05d9</div>
+    <h1 class="title-main">\u05e7\u05e8\u05d0 \u05d0\u05ea \u05d4\u05e9\u05e2\u05d5\u05df</h1>
+  </div>
+
+  <!-- Card -->
+  <div class="card" id="card">
+
+    <div id="state-loading">
+      <div class="loading-wrap">
+        <div class="spinner"></div>
+        <div class="loading-text">\u05d8\u05d5\u05e2\u05df...</div>
+      </div>
+    </div>
+
+    <div id="state-waiting" style="display:none;">
+      <div class="waiting-wrap">
+        <div class="waiting-emoji">\ud83c\udf19</div>
+        <div class="waiting-title">\u05db\u05d1\u05e8 \u05e9\u05d9\u05d7\u05e7\u05ea \u05d4\u05d9\u05d5\u05dd!</div>
+        <div class="waiting-sub">\u05d7\u05d6\u05d5\u05e8 \u05d1\u05e2\u05d5\u05d3</div>
+        <div class="countdown" id="countdown">00:00:00</div>
+      </div>
+    </div>
+
+    <div id="state-playing" style="display:none;">
+      <div class="playing-wrap">
+        <div class="clock-wrap">
+          <div class="clock-glow"></div>
+          <svg id="clockSvg" width="260" height="260"></svg>
+        </div>
+        <div style="width:100%">
+          <div class="input-hint">\u05d4\u05d6\u05df \u05d0\u05ea \u05d4\u05e9\u05e2\u05d4 \u05d4\u05de\u05d5\u05e6\u05d2\u05ea (\u05dc\u05d3\u05d5\u05d2\u05de\u05d4: <span>12:23</span>)</div>
+          <input type="text" id="timeInput" placeholder="__:__" maxlength="5" autocomplete="off" />
+          <button class="btn-submit" onclick="handleSubmit()">\u05d0\u05e9\u05e8 \u05ea\u05e9\u05d5\u05d1\u05d4 \u2713</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="state-result" style="display:none;">
+      <div class="result-wrap">
+        <div class="result-emoji" id="resultEmoji"></div>
+        <div class="result-text">
+          <div class="result-title" id="resultTitle"></div>
+          <div class="result-detail" id="resultDetail"></div>
+        </div>
+        <div class="streak-badge" id="streakBadge" style="display:none;"></div>
+        <div class="best-badge"   id="bestBadge"   style="display:none;"></div>
+        <div class="result-footer">\u05d4\u05de\u05e9\u05d7\u05e7 \u05d4\u05d1\u05d0 \u05d9\u05d4\u05d9\u05d4 \u05d6\u05de\u05d9\u05df \u05d1\u05e2\u05d5\u05d3 24 \u05e9\u05e2\u05d5\u05ea</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Stats -->
+  <div class="stats-bar" id="statsBar" style="visibility:hidden;">
+    <div class="stat-card" style="border:1px solid #ff8c0033;">
+      <div class="stat-value" style="color:#ff8c00;" id="stat-streak">0</div>
+      <div class="stat-label">\ud83d\udd25 \u05e8\u05e6\u05e3 \u05e0\u05d5\u05db\u05d7\u05d9</div>
+    </div>
+    <div class="stat-card" style="border:1px solid #ffd70033;">
+      <div class="stat-value" style="color:#ffd700;" id="stat-best">0</div>
+      <div class="stat-label">\ud83d\udc51 \u05e9\u05d9\u05d0 \u05e8\u05e6\u05e3</div>
+    </div>
+    <div class="stat-card" style="border:1px solid #0088cc33;">
+      <div class="stat-value" style="color:#0088cc;" id="stat-total">0</div>
+      <div class="stat-label">\u05de\u05e9\u05d7\u05e7\u05d9\u05dd</div>
+    </div>
+    <div class="stat-card" style="border:1px solid #00aa6633;">
+      <div class="stat-value" style="color:#00aa66;" id="stat-rate">0%</div>
+      <div class="stat-label">% \u05d4\u05e6\u05dc\u05d7\u05d4</div>
+    </div>
+  </div>
+
+  <div class="page-footer">\u05de\u05e9\u05d7\u05e7 \u05e9\u05d4\u05ea\u05d7\u05d9\u05dc \u05d5\u05dc\u05d0 \u05d4\u05d5\u05e9\u05dc\u05dd \u05e0\u05e1\u05e4\u05e8 \u05db\u05db\u05d9\u05e9\u05dc\u05d5\u05df</div>
+</div>
+
+<script>
+// \u2500\u2500 Theme \u2500\u2500
+const THEME_KEY  = 'clock_game_theme';
+const STORAGE_KEY = 'clock_game_v1';
+const COOLDOWN_MS = 24 * 60 * 60 * 1000;
+
+let isDark = localStorage.getItem(THEME_KEY) !== 'light';
+
+function applyTheme() {
+  document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+  document.getElementById('themeIcon').textContent  = isDark ? '\u2600\ufe0f' : '\ud83c\udf19';
+  document.getElementById('themeLabel').textContent = isDark ? '\u05de\u05e6\u05d1 \u05d1\u05d4\u05d9\u05e8' : '\u05de\u05e6\u05d1 \u05db\u05d4\u05d4';
+  // Redraw clock with new palette if in game
+  if (currentClock) drawClock(currentClock.hour, currentClock.minute);
+}
+
+function toggleTheme() {
+  isDark = !isDark;
+  localStorage.setItem(THEME_KEY, isDark ? 'dark' : 'light');
+  applyTheme();
+}
+
+// \u2500\u2500 Helpers \u2500\u2500
+function getVar(name) {
+  return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+}
+
+// \u2500\u2500 Storage \u2500\u2500
+function loadStats() {
+  try { const r = localStorage.getItem(STORAGE_KEY); if (r) return JSON.parse(r); } catch {}
+  return { streak:0, bestStreak:0, totalGames:0, successCount:0, lastGameTimestamp:null, pendingGame:null };
+}
+function saveStats(s) { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(s)); } catch {} }
+
+// \u2500\u2500 State \u2500\u2500
+let stats = null, currentClock = null, countdownInterval = null, gameState = 'loading';
+
+// \u2500\u2500 Init \u2500\u2500
+window.addEventListener('DOMContentLoaded', () => {
+  applyTheme();
+
+  stats = loadStats();
+  if (stats.pendingGame) {
+    stats.totalGames++;
+    stats.streak = 0;
+    stats.pendingGame = null;
+    saveStats(stats);
+  }
+  updateStatsBar();
+
+  const now = Date.now();
+  if (stats.lastGameTimestamp && (now - stats.lastGameTimestamp) < COOLDOWN_MS) {
+    startWaiting(COOLDOWN_MS - (now - stats.lastGameTimestamp));
+  } else {
+    beginGame();
+  }
+});
+
+// \u2500\u2500 Begin game \u2500\u2500
+function beginGame() {
+  const hour   = Math.floor(Math.random() * 12) + 1;
+  const minute = Math.floor(Math.random() * 60);
+  currentClock = { hour, minute };
+  stats.pendingGame = { hour, minute, startedAt: Date.now() };
+  saveStats(stats);
+  drawClock(hour, minute);
+  document.getElementById('timeInput').value = '';
+  showState('playing');
+  setTimeout(() => document.getElementById('card').classList.add('visible'), 60);
+  const inp = document.getElementById('timeInput');
+  inp.focus();
+  inp.onkeydown = e => { if (e.key === 'Enter') handleSubmit(); };
+}
+
+// \u2500\u2500 Waiting \u2500\u2500
+function startWaiting(remaining) {
+  showState('waiting');
+  document.getElementById('card').classList.add('visible');
+  updateCountdown(remaining);
+  countdownInterval = setInterval(() => {
+    remaining -= 1000;
+    if (remaining <= 0) {
+      clearInterval(countdownInterval);
+      stats = loadStats();
+      beginGame();
+    } else { updateCountdown(remaining); }
+  }, 1000);
+}
+
+function updateCountdown(ms) {
+  const h = Math.floor(ms/3600000), m = Math.floor((ms%3600000)/60000), s = Math.floor((ms%60000)/1000);
+  document.getElementById('countdown').textContent = `${pad(h)}:${pad(m)}:${pad(s)}`;
+}
+function pad(n) { return String(n).padStart(2,'0'); }
+
+// \u2500\u2500 Draw clock (theme-aware) \u2500\u2500
+function drawClock(hour, minute) {
